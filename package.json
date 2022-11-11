@@ -1,0 +1,36 @@
+{
+  "type": "module",
+  "name": "tui-dlp",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src",
+    "build": "swc src -d .dist && pkg .dist/index.js -t node18-linux-armv7 -o .build/tui-dlp"
+  },
+  "keywords": [
+    "tui",
+    "cli",
+    "yt-dlp",
+    "youtube-dl",
+    "termux",
+    "video-downloader",
+    "typescript"
+  ],
+  "author": {
+    "name": "Murad Büyükaşik"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "clipboardy": "^3.0.0",
+    "ink": "^3.2.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.3.14",
+    "pkg": "^5.8.0",
+    "tsx": "^3.12.0",
+    "typescript": "^4.8.4"
+  }
+}
