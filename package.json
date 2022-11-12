@@ -5,8 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src",
-    "build": "swc src -d .dist && pkg .dist/index.js -t node18-linux-armv7 -o .build/tui-dlp"
+    "dist": "swc src -d .dist",
+    "start": "node .dist/index.js",
+    "build": "pkg .dist/index.js -t node18-linux-arm64 -o .build/tui-dlp"
   },
   "keywords": [
     "tui",
