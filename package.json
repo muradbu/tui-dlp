@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "tui-dlp",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,7 @@
   "dependencies": {
     "clipboardy": "^3.0.0",
     "ink": "^3.2.0",
+    "ink-text-input": "^4.0.3",
     "react": "^18.2.0"
   },
   "devDependencies": {
