@@ -4,7 +4,7 @@ import { UncontrolledTextInput } from 'ink-text-input';
 import clipboard from "clipboardy";
 
 type Props = {
-    clipboardAutoFill?: boolean;
+    autoFillUrl?: boolean;
 }
 
 function isUrl() {
@@ -13,16 +13,19 @@ function isUrl() {
         return value
     }
 
-    return ''
+    return undefined
 }
 
-export default function UrlBar({ clipboardAutoFill = false }: Props) {
+export default function UrlBar({ autoFillUrl = false }: Props) {
+    const url = autoFillUrl ? isUrl() : undefined;
+
     return (
-        <Box borderStyle="round" paddingX={1}>
-            <Box marginRight={1}>
-                <Text color="green">URL:</Text>
+        <>
+            <Box borderStyle="round" paddingX={1}>
+                <Box marginRight={1}>
+                    <Text color="green">URL:</Text>
+                </Box>
+                <UncontrolledTextInput initialValue={url} />
             </Box>
-            <UncontrolledTextInput initialValue={clipboardAutoFill ? isUrl() : ''} />
-        </Box>
     );
 }
