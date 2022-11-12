@@ -27,5 +27,7 @@ export default function UrlBar({ autoFillUrl = false }: Props) {
                 </Box>
                 <UncontrolledTextInput initialValue={url} />
             </Box>
+            {url && <Text color="green">Pasted URL from clipboard</Text>}
+        </>
     );
 }
