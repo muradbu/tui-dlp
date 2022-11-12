@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Text } from 'ink';
 import { UncontrolledTextInput } from 'ink-text-input';
 import clipboard from "clipboardy";
@@ -18,6 +18,15 @@ function isUrl() {
 
 export default function UrlBar({ autoFillUrl = false }: Props) {
     const url = autoFillUrl ? isUrl() : undefined;
+    const [showMessage, setShowMessage] = useState(url ? true : false);
+
+    useEffect(() => {
+        if (showMessage) {
+            setTimeout(() => {
+                setShowMessage(false)
+            }, 2000)
+        }
+    }, [showMessage])
 
     return (
         <>
@@ -27,7 +36,7 @@ export default function UrlBar({ autoFillUrl = false }: Props) {
                 </Box>
                 <UncontrolledTextInput initialValue={url} />
             </Box>
-            {url && <Text color="green">Pasted URL from clipboard</Text>}
+            {showMessage && <Text color="green">Pasted URL from clipboard</Text>}
         </>
     );
 }
